@@ -1,0 +1,9 @@
+
+# pdf format
+*.pdf
+
+# image format
+*.svg
+*.jpg
+*.jpeg
+*.png
