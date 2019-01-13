@@ -56,7 +56,7 @@ class Libop:
       return 0
 LIB = Libop()      
 root=Tk()
-root.wm_title("Library System")
+root.wm_title("图书管理系统by张文伟")
 str1=str2=''
 book_type=name=year=publisher=writer=price1=price2=order=''
 cardid=''

@@ -50,7 +50,7 @@ int loadone()
         n=0;
         for(i=0;a[i]!='\0';i++)
         {
-            c=getch();if(a[i]==(c-20)*2)
+            c=getchar();if(a[i]==(c-20)*2)
             n++;
         }
         if(n!=i)
@@ -100,7 +100,7 @@ struct readerinf *creat(void) /*初始化读者信息链表函数*/
         printf("不能打开文件\n");
         exit(0);
     }
-    if(pf==-1) /*若文件为空文件*/
+    if(pf == -1) /*若文件为空文件*/
     head=NULL;
     else
     {
@@ -281,7 +281,7 @@ int loadtwo()
             n=0;
             for(j=0;liber[i].m[j]!='\0';j++)
             {
-                c=getch();
+                c=getchar();
                 if(liber[i].m[j]==(c-20)*2)
                 n++;
             }
@@ -445,7 +445,7 @@ struct readerinf * loadthree()
             n=0;
             for(j=0;p->secretnum[j]!='\0';)
             {
-                c=getch();
+                c=getchar();
                 if(p->secretnum[j]==(c-20)*2)
                 n++;
                 j++;

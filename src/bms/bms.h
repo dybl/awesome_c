@@ -3,7 +3,6 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
-#include<conio.h>
 #include<malloc.h>
 #include<time.h>
 #define LEN sizeof(struct readerinf)
