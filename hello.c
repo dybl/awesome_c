@@ -5,7 +5,7 @@ int HelloWorld(char* string) {
 int main(int argc, char* argv[]) 
 {
    if(argv == 0) return 1;
-   HelloWorld(argv);
+   HelloWorld(*argv);
    return 0;
 }
 
