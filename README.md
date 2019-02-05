@@ -9,6 +9,11 @@ git clone https://github.com/dybl/awesome_C.git
 git pull
 ```
 
+
+- This awesome repository contains a lot of resource about C/C++,
+- you may learn it from get start to be a master
+
+
 ```yaml
 ├── base
 │   ├── apt-dpkg.md
@@ -643,11 +648,6 @@ git pull
 *   [mini-xml](http://hao.jobbole.com/mini-xml/)：小型 XML 读写库。没有 C 标准库的依赖。[GNU LGPL2.1 with static linking exception](http://svn.msweet.org/mxml/trunk/COPYING)。[官网](http://www.msweet.org/projects.php?Z3)
 
 
-
-- This awesome repository contains a lot of resource about C/C++,
-- you may learn it from get start to be a master
-
-![](src/v2-237fc82d87f9fefe839d434e8247cbc7_r.jpg)
 
 ## TODO
 ...
