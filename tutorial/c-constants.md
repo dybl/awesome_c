@@ -197,7 +197,7 @@ value of area : 50
 
 **(4) const 可以节省空间，避免不必要的内存分配。 例如：**
 
-```
+```c
 #define NUM 3.14159 //常量宏
 const doulbe Num = 3.14159; //此时并未将Pi放入ROM中 ......
 double i = Num; //此时为Pi分配内存，以后不再分配！
