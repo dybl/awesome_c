@@ -80,9 +80,4 @@ Progranm name ./a.out
 The argument supplied is testing1 testing2
 ```
 
- [C 内存管理](http://www.runoob.com/cprogramming/c-memory-management.html)
-
-[C 排序算法](http://www.runoob.com/cprogramming/c-sort-algorithm.html) 
-
-
 

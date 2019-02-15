@@ -115,7 +115,4 @@ void 类型指定没有可用的值。它通常用于以下三种情况下：
 
 如果现在您还是无法完全理解 void 类型，不用太担心，在后续的章节中我们将会详细讲解这些概念。
 
- [C 基本语法](http://www.runoob.com/cprogramming/c-basic-syntax.html)
-
-[C 变量](http://www.runoob.com/cprogramming/c-variables.html) 
 

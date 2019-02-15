@@ -141,11 +141,6 @@ Max value is : 200
 
 默认情况下，C 使用**传值调用**来传递参数。一般来说，这意味着函数内的代码不能改变用于调用函数的实际参数。
 
- [C 循环](http://www.runoob.com/cprogramming/c-loops.html)
-
-[C 作用域规则](http://www.runoob.com/cprogramming/c-scope-rules.html) 
-
-## 9 篇笔记 写笔记
 
 ## 内部函数
 

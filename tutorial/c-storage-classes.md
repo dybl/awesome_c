@@ -107,11 +107,6 @@ extern 修饰符通常用于当有两个或多个文件共享相同的全局变�
 count is 5
 ```
 
- [C 常量](http://www.runoob.com/cprogramming/c-constants.html)
-
-[C 运算符](http://www.runoob.com/cprogramming/c-operators.html) 
-
-## 5 篇笔记 写笔记
 
    **auto** 是局部变量的默认存储类, 限定变量只能在函数内部使用；
 
