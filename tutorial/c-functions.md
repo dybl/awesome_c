@@ -32,7 +32,23 @@ return_type function_name( parameter list )
 
 以下是 **max()** 函数的源代码。该函数有两个参数 num1 和 num2，会返回这两个数中较大的那个数：
 
-/* 函数返回两个数中较大的那个数 */ int max(int num1, int num2)  {    /* 局部变量声明 */    int result;      if (num1 > num2)       result = num1;    else       result = num2;      return result;  }
+```c
+/* 函数返回两个数中较大的那个数 */
+int max(int num1, int num2) 
+{
+   /* 局部变量声明 */
+   int result;
+ 
+   if (num1 > num2)
+      result = num1;
+   else
+      result = num2;
+ 
+   return result; 
+}
+```
+
+
 
 ## 函数声明
 
