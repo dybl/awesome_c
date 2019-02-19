@@ -4,13 +4,13 @@
 
 <h1 align="center">awesome-c</h1>
 
-## NOTES:
+## NOTES 注意事项:
 
 ```bash
 git clone https://github.com/dybl/awesome_C.git
 ```
 
-> 在我们学习 C 语言的基本构建块之前，让我们先来看看一个最小的 C 程序结构，在接下来的章节中可以以此作为参考。
+> 在我们学习 C 语言的基本构建块之前，让我们先来看看一个最小的 C 程序结构，以此作为参考。
 
 C程序主要包括以下部分：
 
