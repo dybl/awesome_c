@@ -165,9 +165,8 @@ void merge_sort(int arr[], const int len) {
 > 在区间中随机挑选一个元素作基准，将小于基准的元素放在基准之前，大于基准的元素放在基准之后，再分别对小数区与大数区进行排序。
 
 
-
-
-迭代法
+- 迭代法
+```c
 typedef struct _Range {
     int start, end;
 } Range;
@@ -211,7 +210,9 @@ void quick_sort(int arr[], const int len) {
         if (range.end > left) r[p++] = new_Range(left, range.end);
     }
 }
-递归法
+```
+- 递归法
+```c
 void swap(int *x, int *y) {
     int t = *x;
     *x = *y;
@@ -240,18 +241,16 @@ void quick_sort_recursive(int arr[], int start, int end) {
 void quick_sort(int arr[], int len) {
     quick_sort_recursive(arr, 0, len - 1);
 }
- C 命令行参数 C 语言实例 
-2 篇笔记  写笔记
-   唐瓷
+```
 
-  mrz***gtao@gmail.com
+## Other
 
 1. 希尔排序缩小递增量必须是要互质的。
 
 2. 快速排序可以不用交换中间值。
 
 以下代码仅供参考：
-
+```c
 void Array_Map_Sort_Quickly_Extrem(int* Array, int start, int end)
 {
     int i=start;
@@ -273,17 +272,9 @@ void Array_Map_Sort_Quickly_Extrem(int* Array, int start, int end)
     Array_Map_Sort_Quickly_Extrem(Array,start,i-1);
     Array_Map_Sort_Quickly_Extrem(Array,i+1,end);
 }
-唐瓷
-   唐瓷
+```
 
-  mrz***gtao@gmail.com
-
-2个月前 (12-20)
-   学神之女
-
-  dff***j@qq.com
-
-有种排序叫做猴子排序（Bogo Monkey）：
+- 有种排序叫做猴子排序（Bogo Monkey）：
 
  1、检查是否排好
  2、打乱
@@ -294,6 +285,7 @@ void Array_Map_Sort_Quickly_Extrem(int* Array, int start, int end)
 
 排序代码：
 
+```c
 #include <time.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -319,11 +311,15 @@ bool isSorted(int arr[], int length){
 void bogoSort(int array[], int length){
   while(!isSorted(array,length)) randomize(array,length);
 }
-Demo：
+```
 
+- Demo：
+
+```c
 #include <stdio.h>
 int main(){
   int numbers[] = {20,9,233,0,-23,7,1,666,4,345,63,45,2,45};
   bogoSort(numbers,14);//也可以改成更小
   for(int i = 0; i < 14; i++) printf("%d,",numbers[i]);
 }
+```
