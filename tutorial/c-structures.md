@@ -403,6 +403,7 @@ struct k{
 请看下面的实例：
 
 实例
+```c
 main(){
     struct bs{
         unsigned a:1;
@@ -419,16 +420,14 @@ main(){
     pbit->c|=1;    /* 使用了复合位运算符"|="，相当于：pbit->c=pbit->c|1，其结果为 15 */
     printf("%d,%d,%d\n",pbit->a,pbit->b,pbit->c);    /* 用指针方式输出了这三个域的值 */
 }
+```
 上例程序中定义了位域结构 bs，三个位域为 a、b、c。说明了 bs 类型的变量 bit 和指向 bs 类型的指针变量 pbit。这表示位域也是可以使用指针的。
 
- C 字符串 C 共用体 
-6 篇笔记  写笔记
-   tianqixin
 
-  429***967@qq.com
+## Others
+> 结构体中成员变量分配的空间是按照成员变量中占用空间最大的来作为分配单位,同样成员变量的存储空间也是不能跨分配单位的,如果当前的空间不足,则会存储到下一个分配单位中。
 
-结构体中成员变量分配的空间是按照成员变量中占用空间最大的来作为分配单位,同样成员变量的存储空间也是不能跨分配单位的,如果当前的空间不足,则会存储到下一个分配单位中。
-
+```c
 #include <stdio.h>
 
 typedef struct
@@ -449,6 +448,7 @@ int main(void)
     printf("debug_size1_t size=%lu,debug_size2_t size=%lu\r\n", sizeof(debug_size1_t), sizeof(debug_size2_t));
     return 0;
 }
+```
 编译执行输出结果：
 
 debug_size1_t size=12,debug_size2_t size=8
@@ -456,18 +456,11 @@ debug_size1_t size=12,debug_size2_t size=8
 
  1.debug_size1_t 存储空间分布为a(1byte)+空闲(3byte)+b(4byte)+c(1byte)+空闲(3byte)=12(byte)。
  1.debug_size2_t 存储空间分布为a(1byte)+b(1byte)+空闲(2byte)+c(4byte)=8(byte)。
-tianqixin
-   tianqixin
 
-  429***967@qq.com
 
-2年前 (2017-03-27)
-   小羽
+### 结构体数组:
 
-  106***1689@qq.com
-
-结构体数组:
-
+```c
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -528,18 +521,11 @@ char * s_gets(char * st, int n)
     }
     return ret_val;
 }
-小羽
-   小羽
-
-  106***1689@qq.com
-
-1年前 (2018-01-31)
-   leesc
-
-  318***893@qq.com
+```
 
 可以在声明结构体时初始化结构体变量:
 
+```c
 #include <stdio.h>
 
 int main(void)
@@ -559,24 +545,15 @@ int main(void)
     printf("student1 >>name = %s, gender = %d, age = %d\n", student1.name, student1.gender, student1.age);
     printf("student2 >>name = %s, gender = %d, age = %d\n", student2.name, student2.gender, student2.age);
 }
-leesc
-   leesc
+```
 
-  318***893@qq.com
-
-6个月前 (08-26)
-   js
-
-  824***808@qq.com
-
-   参考地址
-
-结构体数组
+### 结构体数组
 一个结构体变量中可以存放一组数据（如一个学生的学号，姓名，成绩等数据）。如果有10个学生的数据需要参加运算，显然应该用数组，这就是结构体数组。结构体数组与以前介绍过的数据值型数组不同之处在于每个数组元素都一个结构体类型的数据，它们分别包括各个成员（分量）项。
 
 定义结构体数组
 和定义结构体变量的方法相仿，只需说明其为数组即可。
 
+```c
 struct student
 {
     int num;
@@ -587,6 +564,7 @@ struct student
     char addr[30];
 };
 struct student stu[3];
+```
 以上定义了一个数组 stu，其元素为 struct student 类型数据，数组有 3 个元素。也可以直接定义一个结构体数组。如：
 
 struct student
@@ -638,6 +616,7 @@ struct student stu[] = {{...},{...},{...}};
 结构体数组应用举例
 下面例子说明结构体数组的定义和引用。
 
+```c
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -667,6 +646,7 @@ void main()
         printf("%5s: %d\n", leader[i].name, leader[i].count);
     system("pause");
 }
+```
 运行结果如下：
 
 LI
@@ -685,20 +665,10 @@ Zhang: 3
   Fun: 3
 更多内容参考：C 结构体详解
 
-js
-   js
-
-  824***808@qq.com
-
-   参考地址
-
-4个月前 (10-20)
-   qq105677765
-
-  105***765@qq.com
 
 使用结构数组存储书名/作者，结构体指针访问成员时，也可以对指针解引用再访问，如：*struct_pointer.title;(上面范例)。
 
+```c
 #include<stdio.h>
 #include<string.h>
 
@@ -759,15 +729,7 @@ char * s_gets(char * st, int n)  //输入文本(作家)函数
     }
     return ret_val;
 }
-qq105677765
-   qq105677765
-
-  105***765@qq.com
-
-4个月前 (11-04)
-   hooyubin
-
-  hoo***in@gmail.com
+```
 
 对一楼所讲内容的补充：结构体内存大小对齐原则
 
