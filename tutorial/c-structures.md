@@ -1,5 +1,6 @@
-C 结构体
-C 数组允许定义可存储相同类型数据项的变量，结构是 C 编程中另一种用户自定义的可用的数据类型，它允许您存储不同类型的数据项。
+# C 结构体
+
+> C 数组允许定义可存储相同类型数据项的变量，结构是 C 编程中另一种用户自定义的可用的数据类型，它允许您存储不同类型的数据项。
 
 结构用于表示一条记录，假设您想要跟踪图书馆中书本的动态，您可能需要跟踪每本书的下列属性：
 
@@ -10,18 +11,20 @@ Book ID
 定义结构
 为了定义结构，您必须使用 struct 语句。struct 语句定义了一个包含多个成员的新的数据类型，struct 语句的格式如下：
 
+```c
 struct tag { 
     member-list
     member-list 
     member-list  
     ...
 } variable-list ;
+```
 tag 是结构体标签。
 
 member-list 是标准的变量定义，比如 int i; 或者 float f，或者其他有效的变量定义。
 
 variable-list 结构变量，定义在结构的末尾，最后一个分号之前，您可以指定一个或多个结构变量。下面是声明 Book 结构的方式：
-
+```c
 struct Books
 {
    char  title[50];
@@ -29,8 +32,9 @@ struct Books
    char  subject[100];
    int   book_id;
 } book;
+```
 在一般情况下，tag、member-list、variable-list 这 3 部分至少要出现 2 个。以下为实例：
-
+```c
 //此声明声明了拥有3个成员的结构体，分别为整型的a，字符型的b和双精度的c
 //同时又声明了结构体变量s1
 //这个结构体并没有标明其标签
@@ -40,7 +44,7 @@ struct
     char b;
     double c;
 } s1;
- 
+
 //此声明声明了拥有3个成员的结构体，分别为整型的a，字符型的b和双精度的c
 //结构体的标签被命名为SIMPLE,没有声明变量
 struct SIMPLE
@@ -61,10 +65,12 @@ typedef struct
 } Simple2;
 //现在可以用Simple2作为类型声明新的结构体变量
 Simple2 u1, u2[20], *u3;
+```
 在上面的声明中，第一个和第二声明被编译器当作两个完全不同的类型，即使他们的成员列表是一样的，如果令 t3=&s1，则是非法的。
 
 结构体的成员可以包含其他结构体，也可以包含指向自己结构体类型的指针，而通常这种指针的应用是为了实现一些更高级的数据结构如链表和树等。
 
+```c
 //此结构体的声明包含了其他的结构体
 struct COMPLEX
 {
@@ -95,10 +101,12 @@ struct B
     struct A *partner;
     //other members;
 };
+```
 结构体变量的初始化
 和其它类型变量一样，对结构体变量可以在定义时指定初始值。
 
 实例
+```c
 #include <stdio.h>
  
 struct Books
@@ -119,10 +127,14 @@ title : C 语言
 author: RUNOOB
 subject: 编程语言
 book_id: 123456
-访问结构成员
-为了访问结构的成员，我们使用成员访问运算符（.）。成员访问运算符是结构变量名称和我们要访问的结构成员之间的一个句号。您可以使用 struct 关键字来定义结构类型的变量。下面的实例演示了结构的用法：
+```
+
+## 访问结构成员
+
+> 为了访问结构的成员，我们使用成员访问运算符（.）。成员访问运算符是结构变量名称和我们要访问的结构成员之间的一个句号。您可以使用 struct 关键字来定义结构类型的变量。下面的实例演示了结构的用法：
 
 实例
+```c
 #include <stdio.h>
 #include <string.h>
  
@@ -165,8 +177,10 @@ int main( )
  
    return 0;
 }
+```
 当上面的代码被编译和执行时，它会产生下列结果：
 
+```
 Book 1 title : C Programming
 Book 1 author : Nuha Ali
 Book 1 subject : C Programming Tutorial
@@ -175,10 +189,14 @@ Book 2 title : Telecom Billing
 Book 2 author : Zara Ali
 Book 2 subject : Telecom Billing Tutorial
 Book 2 book_id : 6495700
-结构作为函数参数
+```
+
+## 结构作为函数参数
+
 您可以把结构作为函数参数，传参方式与其他类型的变量或指针类似。您可以使用上面实例中的方式来访问结构变量：
 
 实例
+```c
 #include <stdio.h>
 #include <string.h>
  
@@ -234,7 +252,10 @@ Book title : Telecom Billing
 Book author : Zara Ali
 Book subject : Telecom Billing Tutorial
 Book book_id : 6495700
-指向结构的指针
+```
+
+
+## 指向结构的指针
 您可以定义指向结构的指针，方式与定义指向其他类型变量的指针相似，如下所示：
 
 struct Books *struct_pointer;
@@ -247,6 +268,7 @@ struct_pointer->title;
 让我们使用结构指针来重写上面的实例，这将有助于您理解结构指针的概念：
 
 实例
+```c
 #include <stdio.h>
 #include <string.h>
  
@@ -302,7 +324,11 @@ Book title : Telecom Billing
 Book author : Zara Ali
 Book subject : Telecom Billing Tutorial
 Book book_id : 6495700
-位域
+```
+
+
+## 位域
+
 有些信息在存储时，并不需要占用一个完整的字节，而只需占几个或一个二进制位。例如在存放一个开关量时，只有 0 和 1 两种状态，用 1 位二进位即可。为了节省存储空间，并使处理简便，C 语言又提供了一种数据结构，称为"位域"或"位段"。
 
 所谓"位域"是把一个字节中的二进位划分为几个不同的区域，并说明每个区域的位数。每个域有一个域名，允许在程序中按域名进行操作。这样就可以把几个不同的对象用一个字节的二进制位域来表示。
