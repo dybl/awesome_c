@@ -323,3 +323,231 @@ int main(){
   for(int i = 0; i < 14; i++) printf("%d,",numbers[i]);
 }
 ```
+
+
+
+
+
+```c
+#include <iostream>
+#include <string>
+#include <vector>
+#include <math.h>
+#include <algorithm>
+#include <string.h>
+#include <deque>
+#include <map>
+#include <stack>
+#include <time.h>
+#include <fstream>
+using namespace std;
+const int maxn=100000;
+先产生一个100,000的数组，并写入文件
+
+int main()
+{
+    freopen("random.txt","r",stdin);
+    double time_start=(double)clock();
+    srand((unsigned)time( NULL ));
+    for(int i=0; i<maxn; i++)
+    {
+        int tmp=rand();
+        if(i==0) cout << tmp;
+        else cout << " " << tmp;
+    }
+    cout << endl;
+    double time_end=(double)clock();
+    printf("io time: %.2fms\n",(time_end-time_start));
+    delete [] a;
+    return 0;
+}
+后面读取的流程如下：
+
+int main()
+{
+    freopen("random.txt","r",stdin);
+    double time_start=(double)clock();
+    int* a=new int[maxn];
+    for(int i=0; i<maxn; i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    double time_end=(double)clock();
+    printf("io time: %.2fms\n",(time_end-time_start));
+    time_start=(double)clock();
+    shellSort(a, maxn);
+    ofstream ofile;
+    ofile.open("shellSort.txt");
+    for(int i=0; i<maxn; i++)
+    {
+        if(i==0) ofile << a[i];
+        else ofile << " " << a[i];
+    }
+    cout << endl;
+    time_end=(double)clock();
+    printf("sort time: %.2fms\n",(time_end-time_start));
+    delete [] a;
+    return 0;
+}
+
+//插入排序
+
+void insertSort(int a[], int n)
+{
+    int i=0,j=0;
+    for(i=1; i<n; i++)
+    {
+        int tmp=a[i];
+        for(j=i-1; tmp<a[j] && j>=0; j--)
+        {
+            a[j+1]=a[j];
+        }
+        a[j+1]=tmp;
+    }
+}
+
+//冒泡排序
+
+void bubbleSort(int a[], int n)
+{
+    int i=0,j=0;
+    for(i=n-1; i>=0; i--)
+    {
+        for(j=0; j<i; j++)
+        {
+            if(a[j]>=a[j+1]) swap(a[j],a[j+1]);
+        }
+    }
+}
+
+
+//归并排序
+
+void mergeTwoArray(int a[], int lena, int b[], int lenb)
+{
+    int* tmparray=new int[lena+lenb];
+    int i=0, j=0, k=0;
+    while(i<lena && j<lenb)
+    {
+        if(a[i]<b[j])
+        {
+            tmparray[k]=a[i];
+            i++,k++;
+        }
+        else
+        {
+            tmparray[k]=b[j];
+            j++,k++;
+        }
+    }
+    while(i<lena)
+    {
+        tmparray[k]=a[i];
+        i++,k++;
+    }
+    while(j<lenb)
+    {
+        tmparray[k]=b[j];
+        j++,k++;
+    }
+    for(i=0; i<lena+lenb; i++)
+    {
+        a[i]=tmparray[i];
+    }
+    delete [] tmparray;
+}
+void mergeSort(int a[], int n)
+{
+    if(n>1)
+    {
+        int mid=n/2;
+        int lena=mid;
+        int lenb=n-mid;
+        int* b=a+mid;
+        mergeSort(a,lena);
+        mergeSort(b,lenb);
+        mergeTwoArray(a,lena,b,lenb);
+    }
+}
+
+//堆排序
+
+void siftDown(int a[], int i, int n)
+{
+    int lhs=2*i+1;
+    int rhs=2*i+2;
+    int maxid=i;
+    if(lhs<n && a[i]<a[lhs]) maxid=lhs;
+    if(rhs<n && a[maxid]<a[rhs]) maxid=rhs;
+    if(maxid!=i)
+    {
+        swap(a[i],a[maxid]);
+        siftDown(a,maxid,n);
+    }
+}
+void makeHeap(int a[], int n)
+{
+    for(int i=n/2+1; i>=0; i--)
+    {
+        siftDown(a,i,n);
+    }
+}
+void heapSort(int a[], int n)
+{
+    makeHeap(a,n);
+    for(int i=n-1; i>=0; i--)
+    {
+        swap(a[0],a[i]);
+        siftDown(a,0,i);
+    }
+}
+
+//快速排序
+
+void quickSort(int a[], int n)
+{
+    if(n<=1) return;
+    int mid=a[0];
+    int i=0,j=n-1;
+    while(i<j)
+    {
+        while(j>i && a[j]>=mid) j--;
+        if(j>i)
+        {
+            a[i]=a[j];
+            i++;
+        }
+        while(i<j && a[i]<mid) i++;
+        if(i<j)
+        {
+            a[j]=a[i];
+            j--;
+        }
+    }
+    a[i]=mid;
+    quickSort(a,i);
+    quickSort(a+i+1,n-i-1);
+}
+
+//希尔排序
+
+void shellSort(int a[], int n)
+{
+    for(int step=n/2; step>0; step/=2)
+    {
+        for(int i=step; i<n; i++)
+        {
+            int val=a[i];
+            int j=0;
+            for( j=i-step; j>=0 && a[j]>val; j-=step)
+            {
+                a[j+step]=a[j];
+            }
+            a[j+step]=val;
+        }
+    }
+}
+```
+
+
+
