@@ -1,13 +1,26 @@
-![logo](assets/img/logo.png)
+<!--  封面  -->
+![logo](_media/icon.svg)
 
+![title](_media/logo_white.svg)
 
-# Awesome-C <small>0.0.1</small>
+<blockquote>
+  <p style="color:#fff;">Awesome_c</p>
+  <small>0.0.1</small>
+</blockquote>
 
-> A magical documentation site generator.
+<ul style="color:#fff">
+  <li>`awesome_c` have so many template for learn c language more quickly</li>
+</ul>
 
-- Simple and lightweight (~21kB gzipped)
-- No statically built html files
-- Multiple themes
+<p id="cover-nav">
+  <a href="#/base-quickstart">
+    <span class="arrow"></span>
+  </a>
+</p>
 
 [GitHub](https://github.com/dybl/awesome_c/)
 [Getting Started](#awesome_c)
+<!-- [GitHub](#) -->
+<!-- [Get Started](base-quickstart.md) -->
+
+
