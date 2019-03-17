@@ -1,5 +1,21 @@
 <!-- 侧边栏 -->
-
+- Clang 
+  - [sort](clang/base/c-sort-algorithm.md)
+  - [apt-dpkg](clang/apt-dpkg.md)                  
+  - [constants](clang/base/c-constants.md)  
+  - [function-pointer-calback](clang/base/c-fun-pointer-callback.md)  
+  - [typedef](clang/base/c-typedef.md)   
+  - [book](clang/book.md)                      
+  - [data-type](clang/base/c-data-type.md)    
+  - [header-file](clang/base/c-header-file.md)           
+  - [storage-classes](clang/base/c-storage-classes.md)  
+  - [union](clang/base/c-union.md)
+  - [command-line-arguments](clang/base/c-command-line-arguments.md)  
+  - [functions](clang/base/c-functions.md)  
+  - [recursion](clang/base/c-recursion.md)             
+  - [structures](clang/base/c-structures.md)       
+  - [variables](clang/base/c-variables.md)
+  
 - 快速开始
   - [介绍](base-quickstart.md)
   - [开始使用](base-usage.md)
@@ -22,19 +38,3 @@
   - [词云图](chart-wordcloud.md)
   - [水球图](chart-liquidfill.md)
 
-- Clang 
-  - [sort](clang/base/c-sort-algorithm.md)
-  - [apt-dpkg](clang/apt-dpkg.md)                  
-  - [constants](clang/base/c-constants.md)  
-  - [function-pointer-calback](clang/base/c-fun-pointer-callback.md)  
-  - [typedef](clang/base/c-typedef.md)   
-  - [book](clang/book.md)                      
-  - [data-type](clang/base/c-data-type.md)    
-  - [header-file](clang/base/c-header-file.md)           
-  - [storage-classes](clang/base/c-storage-classes.md)  
-  - [union](clang/base/c-union.md)
-  - [command-line-arguments](clang/base/c-command-line-arguments.md)  
-  - [functions](clang/base/c-functions.md)  
-  - [recursion](clang/base/c-recursion.md)             
-  - [structures](clang/base/c-structures.md)       
-  - [variables](clang/base/c-variables.md)
