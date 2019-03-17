@@ -22,10 +22,6 @@
   - [词云图](chart-wordcloud.md)
   - [水球图](chart-liquidfill.md)
 
-- 其他
-  - [属性配置](setting-demo.md)
-  - [事件处理](event-demo.md)
-
 - Clang 
   - [sort](clang/base/c-sort-algorithm.md)
   - [apt-dpkg](clang/apt-dpkg.md)                  

@@ -11,7 +11,7 @@ button.sidebar-toggle {
 }
 
 section.cover.show {
-  background-image: url(./_media/bg.jpg) !important;
+  background-image: url(./_media/bg.png) !important;
   background-size: cover !important;
 }
 
