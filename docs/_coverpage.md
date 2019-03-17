@@ -1,13 +1,13 @@
-<!-- _coverpage.md -->
+![logo](assets/img/logo.png)
 
-![logo](/assets/images/logo.png)
 
-## vue-amap  |  基于 Vue 2.x 与高德的地图组件
+# Awesome-C <small>0.0.1</small>
 
-- 数据状态与地图状态单向绑定
-- 开发者无需关心地图的具体操作
+> A magical documentation site generator.
 
-[GitHub](https://github.com/ElemeFE/vue-amap/)
-[文档](/zh-cn/introduction/install)
+- Simple and lightweight (~21kB gzipped)
+- No statically built html files
+- Multiple themes
 
-![color](#e4fff7)
+[GitHub](https://github.com/dybl/awesome_c/)
+[Getting Started](#awesome_c)
